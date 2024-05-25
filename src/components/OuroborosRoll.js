@@ -18,6 +18,7 @@ function OuroborosRoll({ onChoose }) {
 
     return (
         <div>
+            <h2>Ouroboros Roll</h2>
             <button onClick={handleRoll} disabled={rolls.length >= 3 || chosen !== null}>Roll</button>
             {rolls.map((roll, index) => (
                 <p key={index}>Roll {index + 1}: {roll}</p>

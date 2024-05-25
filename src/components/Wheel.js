@@ -1,3 +1,4 @@
+// src/components/Wheel.js
 import React, { useState, useEffect } from 'react';
 import { Wheel as CustomWheel } from 'react-custom-roulette';
 import './Wheel.css';
@@ -18,8 +19,10 @@ function Wheel({ options = [], onSpinEnd, spinDuration = 0.5, forceFirstSpinToOu
         let selected;
         if (forceFirstSpinToOuroboros && options.includes('Ouroboros')) {
             selected = options.indexOf('Ouroboros'); // Force first spin to "Ouroboros"
+            console.log('Forcing first spin to Ouroboros:', selected);
         } else {
             selected = Math.floor(Math.random() * options.length);
+            console.log('Randomly selected:', selected);
         }
         if (selected < 0 || selected >= options.length || isNaN(selected)) {
             console.error('Selected index is invalid:', selected);
@@ -34,7 +37,7 @@ function Wheel({ options = [], onSpinEnd, spinDuration = 0.5, forceFirstSpinToOu
             console.error('Invalid option:', option, 'at index:', index);
         }
         return {
-            option: option.toString(),
+            option: option.toString(), // Ensure option is a string
             style: { backgroundColor: 'white', textColor: 'black' }
         };
     });
@@ -57,6 +60,7 @@ function Wheel({ options = [], onSpinEnd, spinDuration = 0.5, forceFirstSpinToOu
                         console.error('Invalid prizeNumber, options:', options, 'prizeNumber:', prizeNumber);
                         return;
                     }
+                    console.log('Spin ended. Prize:', options[prizeNumber]);
                     setMustSpin(false);
                     onSpinEnd(options[prizeNumber]);
                 }}

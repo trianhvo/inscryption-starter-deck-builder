@@ -1,3 +1,9 @@
+/* src/components/CardSelection.css */
+
+.card-selection-container {
+    padding-bottom: 20px;
+}
+
 .card-list {
     display: flex;
     flex-wrap: wrap;
@@ -7,7 +13,7 @@
 }
 
 .card-item {
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
     border: 1px solid gray;
     border-radius: 5px;
@@ -21,6 +27,40 @@
 }
 
 .card-item img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 100%; 
+    height: auto;
+}
+
+.submit-button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px; 
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Desktop and larger tablets */
+@media screen and (min-width: 1024px) {
+    .card-item {
+        flex-basis: calc(14.28% - 20px); /* 7 items per row */
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .card-item {
+        flex-basis: calc(20% - 20px); /* 5 items per row */
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+    .card-item {
+        flex-basis: calc(33.33% - 20px); /* 3 items per row */
+    }
+
+    .submit-button {
+        padding: 10px 20px; 
+        font-size: 16px;
+    }
 }

@@ -1,6 +1,6 @@
 # Inscryption Starter Deck
 
-Welcome to the **Inscryption Starter Deck Builder**! 🎉
+Welcome to the [**Inscryption Starter Deck Builder**!](https://trianhvo.github.io/inscryption-starter-deck-builder/) 🎉
 
 I’ve beaten "Inscryption" so many times that I needed a new challenge. So, I made this deck starter builder to add some fun and unpredictability to the game. Now, I can let fate decide my deck and keep things interesting.
 

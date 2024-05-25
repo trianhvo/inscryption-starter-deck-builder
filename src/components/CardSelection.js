@@ -1,5 +1,6 @@
+// src/components/CardSelection.js
 import React, { useState, useEffect } from 'react';
-import { cardNames } from '../assets/cards/cardsList';
+import { cardNames } from '../assets/cards/cardsLists';
 import './CardSelection.css';
 
 function CardSelection({ onSubmit, n, onSelectionChange }) {
@@ -33,7 +34,7 @@ function CardSelection({ onSubmit, n, onSelectionChange }) {
     };
 
     return (
-        <div>
+        <div className="card-selection-container">
             <div className="card-list">
                 {cardNames.map((card) => (
                     <div
@@ -46,7 +47,7 @@ function CardSelection({ onSubmit, n, onSelectionChange }) {
                     </div>
                 ))}
             </div>
-            <button onClick={handleSubmit}>Submit</button>
+            <button className="submit-button" onClick={handleSubmit}>Submit</button>
         </div>
     );
 }

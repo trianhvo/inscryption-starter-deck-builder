@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Wheel from './components/Wheel';
 import Note from './components/Note';
 import CardSelection from './components/CardSelection';
@@ -19,7 +19,9 @@ function App() {
 
     const handleWheelEnd = (value) => {
         setN(parseInt(value, 10));
-        setMessages([...messages, `The starter deck has ${value} cards.`]);
+        if (!messages.some(msg => msg.includes('The starter deck has'))) {
+            setMessages(prevMessages => [...prevMessages, `The starter deck has ${value} cards.`]);
+        }
         setStep(2);
     };
 
@@ -32,7 +34,7 @@ function App() {
     const handleSpinEnd = (value) => {
         setSpins(prevSpins => {
             const updatedSpins = [...prevSpins, value];
-            setMessages([...messages, `${value} card added`]);
+            setMessages(prevMessages => [...prevMessages, `${value} card added`]);
 
             if (value === 'Ouroboros') {
                 setIsOuroboros(true);
@@ -51,7 +53,7 @@ function App() {
 
     const handleOuroborosChoose = (value) => {
         setOuroborosDeath(value);
-        setMessages([...messages, `Ouroboros's death: ${value}`]);
+        setMessages(prevMessages => [...prevMessages, `Ouroboros's death: ${value}`]);
         setIsOuroboros(false);
         setSpins(prevSpins => {
             const updatedSpins = [...prevSpins, 'Ouroboros'];

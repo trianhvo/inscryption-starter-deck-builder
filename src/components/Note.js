@@ -1,3 +1,4 @@
+// src/components/Note.js
 import React from 'react';
 
 function Note ({ messages, cardsChosen, n, step }) {
@@ -19,7 +20,6 @@ function Note ({ messages, cardsChosen, n, step }) {
             })}
             {step === 2 && (
                 <>
-                    <p>The starter deck has {n} cards.</p>
                     <p>You must pick {n + 3} to {n * 2} cards</p>
                     <p>Cards chosen: {cardsChosen}</p>
                 </>
