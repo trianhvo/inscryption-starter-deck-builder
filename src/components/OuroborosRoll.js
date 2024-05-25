@@ -1,4 +1,3 @@
-// src/components/OuroborosRoll.js
 import React, { useState } from 'react';
 
 function OuroborosRoll({ onChoose }) {
